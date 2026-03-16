@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Result Calculator</title>
+
+<style>
+
+body{
+font-family: Arial;
+background-color: #bcbfd1;
+text-align:center;
+color:white;
+}
+
+.container{
+background:rgb(229, 222, 222);
+color:black;
+width:550px;
+margin:auto;
+margin-top:50px;
+padding:25px;
+border-radius:12px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#333;
+}
+
+input{
+padding:8px;
+margin:5px;
+border-radius:5px;
+border:1px solid gray;
+}
+
+button{
+padding:10px 18px;
+margin-top:10px;
+background:#6880ea;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5563c1;
+}
+
+table{
+margin:auto;
+margin-top:20px;
+
+}
+
+td,th{
+border:1px solid black;
+padding:8px;
+}
+
+.progress{
+width:100%;
+background:#ddd;
+border-radius:10px;
+margin-top:15px;
+}
+
+.bar{
+height:20px;
+background:green;
+border-radius:10px;
+}
+
+.pass{
+color:green;
+font-weight:bold;
+}
+
+.fail{
+color:red;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2> Student Result Calculator</h2>
+
+<label>Number of Subjects:</label>
+<input type="number" id="subjects">
+
+<br><br>
+
+<button onclick="createInputs()">Generate Subjects</button>
+
+<div id="inputs"></div>
+
+<button onclick="calculate()">Calculate Result</button>
+
+<div id="result"></div>
+
+</div>
+<script src="exp1.js"></script>
+</body>
+</html>
