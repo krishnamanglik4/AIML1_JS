@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Experiment</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            transition: 0.5s;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+        #para {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading">Welcome to My Page</h1>
+
+    <input type="text" id="inputText" placeholder="Enter new heading">
+
+    <br><br>
+
+    <button id="changeText">Change Heading</button>
+    <button id="changeColor">Change Background</button>
+    <button id="increaseFont">Increase Font Size</button>
+    <button id="togglePara">Show/Hide Paragraph</button>
+
+    <p id="para">This is a sample paragraph for DOM manipulation.</p>
+
+    <script>
+        let heading = document.getElementById("heading");
+        let para = document.getElementById("para");
+
+        // Change Heading Text
+        document.getElementById("changeText").addEventListener("click", function() {
+            let text = document.getElementById("inputText").value;
+            heading.innerHTML = text;
+        });
+
+        // Change Background Color (Random - unique feature ⭐)
+        document.getElementById("changeColor").addEventListener("click", function() {
+            let colors = ["lightblue", "lightgreen", "lightpink", "yellow", "orange"];
+            let random = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = random;
+        });
+
+        // Increase Font Size
+        document.getElementById("increaseFont").addEventListener("click", function() {
+            let currentSize = window.getComputedStyle(heading).fontSize;
+            let newSize = parseInt(currentSize) + 5;
+            heading.style.fontSize = newSize + "px";
+        });
+
+        // Show/Hide Paragraph
+        document.getElementById("togglePara").addEventListener("click", function() {
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
